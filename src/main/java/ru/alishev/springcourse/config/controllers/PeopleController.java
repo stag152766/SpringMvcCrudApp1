@@ -1,4 +1,4 @@
-package ru.alishev.springcourse.controllers;
+package ru.alishev.springcourse.config.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.alishev.springcourse.dao.PersonDAO;
-import ru.alishev.springcourse.models.Person;
+import ru.alishev.springcourse.config.dao.PersonDAO;
+import ru.alishev.springcourse.config.models.Person;
 
 import javax.validation.Valid;
 
@@ -38,12 +38,6 @@ public class PeopleController {
         return "people/show";
     }
 
-//    @GetMapping("/new")
-//    // Реализуем форму для объета Person
-//    public String newPerson(Model model){
-//        model.addAttribute("person", new Person());
-//        return "people/new";
-//    }
 
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("person") Person person){
